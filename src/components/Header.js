@@ -1,11 +1,12 @@
-import { Introduction } from "./Introduction";
+
+import { Landing } from "./Landing";
 import { NavBar } from "./NavBar";
 
-export const Header = () => {
+export const Header = ({articles}) => {
   return (
-    <div>
+    <div className="max-w-screen-xl m-auto p-[16px]">
       <NavBar />
-      <Introduction />
+      <Landing articles={articles}/>
     </div>
   );
 };
