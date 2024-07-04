@@ -3,13 +3,13 @@ import { LandingCards } from "./LandingCards";
 import { Right } from "@/assets/icons/Right";
 import { useState } from "react";
 
-const perPage = 4;
+const perPage = 6;
 
 export const Landing = ({ articles }) => {
   const [activeImage, setActiveImage] = useState(0);
 
   const clickNext = () => {
-    setActiveImage((prev) => (prev === 3 ? 0 : prev + 1));
+    setActiveImage((prev) => (prev === perPage - 1 ? 0 : prev + 1));
   };
   const clickPrev = () => {
     setActiveImage((prev) => (prev === 0 ? 3 : prev - 1));
@@ -18,8 +18,11 @@ export const Landing = ({ articles }) => {
     <div className="max-w-screen-xl m-auto  flex flex-col gap-[11px] ">
       <div className="overflow-hidden w-[100%]">
         <div
-          className="flex w-[400%] duration-1000"
-          style={{ transform: `translateX(${-activeImage * 25}%)` }}
+          className="flex duration-1000"
+          style={{
+            width: `${perPage * 100}%`,
+            transform: `translateX(${(-activeImage * 100) / perPage}%)`,
+          }}
         >
           {articles &&
             articles
