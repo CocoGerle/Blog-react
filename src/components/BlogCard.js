@@ -5,10 +5,10 @@ export const BlogCard = (props) => {
 
   return (
     <div className="border rounded-xl p-4 flex flex-col gap-4 ">
-      <img src={props.cover} className="rounded-md flex object-cover h-[240px]" />
+      <img src={props.image} className="rounded-md flex object-cover h-[240px]" />
       <div className="flex flex-col flex-1 gap-4">
         <Button
-          tag={props.tag}
+          tag={props.tags}
           color="bg-gray-100"
           textColor="text-[#4B6BFB]"
         />

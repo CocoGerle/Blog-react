@@ -1,18 +1,25 @@
 import { Button } from "./Button";
 import { FormattedDate } from "./FormattedDate";
 
-export const LandingCards = ({ articles }) => {
+export const LandingCards = ({ img, title, published_at, tags }) => {
   return (
-    <div>
-      <div className="gap-4 relative flex flex-col h-[600px] rounded-2xl overflow-hidden lg:mt-[100px]">
-        <div className="absolute  bg-white bottom-0 m-6 rounded-xl p-[30px] lg:w-[50%]">
-          {articles.slice(0, 3).map((item, index) => {
-            return (
-              <div className="flex flex-col gap-3">
-                
-              </div>
-            );
-          })}
+    <div className=" h-[600px] relative m-auto">
+      <img src={img} className=" w-[100%] h-[100%] object-cover rounded-md " />
+      <div className="absolute flex flex-col gap-[24px] bg-[#FFFFFF] py-[40px] shadow-md rounded-md bottom-[13px] lg:left-[11px] left-[5%] lg:w-[598px] w-[90%] lg:h-[252px] justify-evenly">
+        <div className="px-[50px]">
+          <div>
+            <Button
+              lai={tags}
+              textColor="text-[#FFFFFF]"
+              bgColor="bg-[#4B6BFB]"
+            />
+          </div>
+
+          <div className="text-[36px] font-semibold text-[#181A2A] lg:w-[400px] w-fit">
+            {title}
+          </div>
+
+          <FormattedDate date={published_at} />
         </div>
       </div>
     </div>
