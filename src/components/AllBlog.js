@@ -84,7 +84,7 @@ export const AllBlogs = () => {
       </div>
 
       <button
-        className="m-auto w-fit px-[20px] py-[12px] border border-gray-400 bg-white text-[#696A75] rounded-md"
+        className="m-auto w-fit px-[20px] py-[12px] border border-gray-400 bg-white text-[#696A75] rounded-md cursor-pointer hover:bg-[#4B6BFB] hover:text-white"
         onClick={handleLoadMore}
       >
         {loading ? <p>Loading...</p> : <p>Load More</p>}

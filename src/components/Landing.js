@@ -12,13 +12,13 @@ export const Landing = ({ articles }) => {
     setActiveImage((prev) => (prev === perPage - 1 ? 0 : prev + 1));
   };
   const clickPrev = () => {
-    setActiveImage((prev) => (prev === 0 ? 3 : prev - 1));
+    setActiveImage((prev) => (prev === 0 ? perPage : prev - 1));
   };
   return (
     <div className="max-w-screen-xl m-auto  flex flex-col gap-[11px] ">
       <div className="overflow-hidden w-[100%]">
         <div
-          className="flex duration-1000"
+          className="flex"
           style={{
             width: `${perPage * 100}%`,
             transform: `translateX(${(-activeImage * 100) / perPage}%)`,
@@ -31,7 +31,7 @@ export const Landing = ({ articles }) => {
                 <LandingCards
                   img={item.cover_image}
                   title={item.title}
-                  tags={item.tag_list}
+                  tag={item.tags}
                   published_at={item.published_at}
                 />
               ))}
