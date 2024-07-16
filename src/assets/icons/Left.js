@@ -1,6 +1,7 @@
 export const Left = () => {
   return (
     <svg
+      cursor="pointer"
       width="40"
       height="40"
       viewBox="0 0 40 40"

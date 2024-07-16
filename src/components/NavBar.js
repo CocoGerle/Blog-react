@@ -4,7 +4,7 @@ import { SearchIcon } from "@/assets/icons/SearchIcon";
 
 export const NavBar = () => {
   return (
-    <div className="flex flex-row justify-between items-center ">
+    <div className="flex flex-row justify-between items-center  lg:mb-[100px] max-w-screen-xl m-auto p-[16px]">
       <div className="flex flex-row items-center gap-[7.69px]">
         <BlogIcon width={30.76} height={26} />
         <div className="flex flex-row text-[#141624] text-[20px]">

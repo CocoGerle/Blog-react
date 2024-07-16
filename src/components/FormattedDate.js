@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 
 export const FormattedDate = ({ date }) => {
-  console.log("HHHH", date);
+  // console.log(date)
   const formattedDate = format(date, "MMMM dd, yyyy");
   return (
     <>

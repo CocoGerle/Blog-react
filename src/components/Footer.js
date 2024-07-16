@@ -6,7 +6,7 @@ import { BlogIcon } from "@/assets/icons/BlogIcon";
 
 export const Footer = () => {
   return (
-    <div className="bg-[#E8E8EA] lg:mt-[69px]  ">
+    <div className="bg-[#E8E8EA] lg:mt-[69px] mt-[80px]">
       <div className="px-[16px] pb-[25px] pt-[64px] max-w-screen-xl m-auto flex flex-col lg:flex-row">
         <div className="lg:flex-1">
           <h1 className="font-semibold text-[18px] mb-[12px]">About</h1>

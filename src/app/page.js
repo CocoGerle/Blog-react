@@ -3,7 +3,9 @@
 
 import { AllBlogs } from "@/components/AllBlog";
 import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import { Landing } from "@/components/Landing";
+import { NavBar } from "@/components/NavBar";
+// import { Header } from "@/components/Header";
 import { Trending } from "@/components/Trending";
 import { useEffect, useState } from "react";
 
@@ -24,7 +26,8 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <Header articles={articles}/>
+      <NavBar/>
+      <Landing articles={articles}/>
       <Trending articles={articles}/>
       <AllBlogs/>
       <Footer />
