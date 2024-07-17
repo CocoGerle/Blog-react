@@ -17,10 +17,12 @@ export const BlogCard = (props) => {
         <p className="font-semibold text-[32px] leading-8">{props.title}</p>
         <div className="flex items-center gap-[24px] mb-[32px]">
           <div className="flex items-center gap-2">
-            <img
-              className="w-[28px] h-[28px] rounded-full"
-              src={props.profile_image}
-            />
+            {props.profile_image && (
+              <img
+                className="w-[28px] h-[28px] rounded-full"
+                src={props.profile_image}
+              />
+            )}
             <p>{props.name}</p>
           </div>
           <FormattedDate date={props.date} />

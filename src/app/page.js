@@ -2,10 +2,11 @@
 
 
 import { AllBlogs } from "@/components/AllBlog";
+import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Landing } from "@/components/Landing";
 import { NavBar } from "@/components/NavBar";
-// import { Header } from "@/components/Header";
+import { NotFound } from "@/components/NotFound";
 import { Trending } from "@/components/Trending";
 import { useEffect, useState } from "react";
 
@@ -30,7 +31,8 @@ export default function Home() {
       <Landing articles={articles}/>
       <Trending articles={articles}/>
       <AllBlogs/>
-      <Footer />
+      <Footer/>
+      {/* <NotFound/> */}
     </div>
   );
 }

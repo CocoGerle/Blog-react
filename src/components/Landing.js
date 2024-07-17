@@ -2,6 +2,7 @@ import { Left } from "@/assets/icons/Left";
 import { LandingCards } from "./LandingCards";
 import { Right } from "@/assets/icons/Right";
 import { useState } from "react";
+import Link from "next/link";
 
 const perPage = 6;
 
@@ -25,16 +26,16 @@ export const Landing = ({ articles }) => {
           }}
         >
           {articles &&
-            articles
-              .slice(0, perPage)
-              .map((item) => (
+            articles.slice(0, perPage).map((item) => (
+             
                 <LandingCards
                   img={item.cover_image}
                   title={item.title}
                   tag={item.tags}
                   published_at={item.published_at}
                 />
-              ))}
+           
+            ))}
         </div>
       </div>
       <div className="flex lg:justify-end justify-center gap-[9px] ">

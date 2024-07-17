@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import { BlogCard } from "../../components/BlogCard";
 import { Footer } from "@/components/Footer";
 import Link from "next/link";
+import { NavBar } from "@/components/NavBar";
+
 
 const BlogsPage = () => {
   const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
-
-  const [category, setCategory] = useState("All");
   const [perPage, setPerPage] = useState(12);
 
   const handleLoadMore = () => {
@@ -22,7 +22,7 @@ const BlogsPage = () => {
         setLoading(true);
 
         const res = await fetch(
-          `https://dev.to/api/articles?page=1&per_page=${perPage}${category}`
+          `https://dev.to/api/articles?page=1&per_page=${perPage}`
         );
 
         const data = await res.json();
@@ -36,10 +36,13 @@ const BlogsPage = () => {
     };
 
     getData();
-  }, [category, perPage]);
+  }, [ perPage]);
 
+  const image =
+  "https://img.wallpapic.com/i2911-721-325/thumb/sunrise-nature-sea-coast-wallpaper.jpg";
   return (
     <div>
+      <NavBar/>
       <div className="flex flex-col  max-w-screen-xl m-auto py-8">
         <h1 className="font-bold text-2xl p-4">All Blog Post</h1>
 
@@ -50,14 +53,13 @@ const BlogsPage = () => {
             <Link key={blog.id} href={`/blogs/${blog.id}`}>
               <BlogCard
                 key={blog.title}
-                image={blog.cover_image}
+                image={blog.cover_image ?? image}
                 title={blog.title}
                 date={blog.published_at}
                 tags={blog.tags}
                 profile_image={blog.user.profile_image}
                 name={blog.user.name}
               />
-             
             </Link>
           ))}
         </div>

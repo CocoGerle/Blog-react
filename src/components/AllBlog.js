@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { BlogCard } from "./BlogCard";
+import Link from "next/link";
 
 const categories = [
   "All",
@@ -51,6 +52,8 @@ export const AllBlogs = () => {
 
     getData();
   }, [category, perPage]);
+  const image =
+    "https://img.wallpapic.com/i2911-721-325/thumb/sunrise-nature-sea-coast-wallpaper.jpg";
 
   return (
     <div className="flex flex-col gap-8 max-w-screen-xl m-auto py-8">
@@ -73,13 +76,15 @@ export const AllBlogs = () => {
 
       <div className="p-4 gap-3 lg:grid lg:grid-cols-3">
         {blogs.map((blog) => (
-          <BlogCard
-            key={blog.title}
-            image={blog.cover_image}
-            title={blog.title}
-            date={blog.published_at}
-            tags={blog.tags}
-          />
+          <Link key={blog.id} href={`/blogs/${blog.id}`}>
+            <BlogCard
+              key={blog.title}
+              image={blog.cover_image ?? image}
+              title={blog.title}
+              date={blog.published_at}
+              tags={blog.tags}
+            />
+          </Link>
         ))}
       </div>
 
