@@ -18,7 +18,7 @@ export const NavBar = () => {
   };
   return (
     <div className="overflow-hidden">
-      <div className="flex flex-row justify-between items-center  lg:mb-[60px] max-w-screen-xl m-auto p-[16px]">
+      <div className="flex flex-row items-center justify-between  lg:mb-[60px] max-w-screen-xl m-auto p-[16px]">
         <Link href={`/`}>
           <div className="flex flex-row items-center gap-[7.69px]">
             <BlogIcon width={30.76} height={26} />
@@ -29,23 +29,25 @@ export const NavBar = () => {
             </div>
           </div>
         </Link>
-        <ul className="invisible lg:visible lg:flex lg:gap-[40px] text-[#3B3C4A] text-[16px]">
-          <Link href={`/`}>
-            <li>Home</li>
-          </Link>
-          <Link href={`/blogs`}>
-            <li>Blog</li>
-          </Link>
-          <Link href={`/contact`}>
-            <li>Contact</li>
-          </Link>
-          <Link href="#footer">
-            <li>About</li>
-          </Link>
-        </ul>
-        <div className="invisible bg-[#F4F4F5] p-2 lg:visible rounded flex items-center justify-between text-[14px] text-[#A1A1AA] w-fit">
-          <input className="bg-[#F4F4F5]" placeholder="Search" />
-          <SearchIcon />
+        <div className="hidden lg:flex lg:gap-[250px]">
+          <ul className="lg:flex hidden lg:gap-[40px] text-[#3B3C4A] text-[16px] lg:items-center">
+            <Link href={`/`}>
+              <li>Home</li>
+            </Link>
+            <Link href={`/blogs`}>
+              <li>Blog</li>
+            </Link>
+            <Link href={`/contact`}>
+              <li>Contact</li>
+            </Link>
+            <Link href="#footer">
+              <li>About</li>
+            </Link>
+          </ul>
+          <div className="bg-[#F4F4F5] p-2 lg:flex rounded flex items-center justify-between text-[14px] text-[#A1A1AA] w-fit">
+            <input className="bg-[#F4F4F5]" placeholder="Search" />
+            <SearchIcon />
+          </div>
         </div>
         <div onClick={handleNav} className="lg:hidden mr-10 ">
           <BurgerMenuIcon />
