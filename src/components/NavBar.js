@@ -49,7 +49,7 @@ export const NavBar = () => {
             <SearchIcon />
           </div>
         </div>
-        <div onClick={handleNav} className="lg:hidden mr-10 ">
+        <div onClick={handleNav} className="lg:hidden  ">
           <BurgerMenuIcon />
         </div>
       </div>
