@@ -11,7 +11,7 @@ const NotFound = () => {
         <div className="flex flex-col gap-[10px] border-t-2 pt-[80px] lg:border-t-0 lg:border-l-2 lg:px-[58px] lg:justify-center lg:pt-0">
           <h1 className="text-[24px]">Page Not Found</h1>
           <p className="text-[#696A75] text-[18px]">
-            We're sorry, This page is unknown or does not exist the page you are
+            We are sorry, This page is unknown or does not exist the page you are
             looking for.
           </p>
           <Link href={`/`}>
