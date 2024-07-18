@@ -47,7 +47,7 @@ export const NavBar = () => {
           <input className="bg-[#F4F4F5]" placeholder="Search" />
           <SearchIcon />
         </div>
-        <div onClick={handleNav} className="lg:hidden ">
+        <div onClick={handleNav} className="lg:hidden mr-10 ">
           <BurgerMenuIcon />
         </div>
       </div>
