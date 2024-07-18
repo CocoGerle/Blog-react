@@ -47,15 +47,15 @@ export const NavBar = () => {
           <input className="bg-[#F4F4F5]" placeholder="Search" />
           <SearchIcon />
         </div>
-        <div onClick={handleNav} className="lg:hidden">
+        <div onClick={handleNav} className="lg:hidden ">
           <BurgerMenuIcon />
         </div>
       </div>
       <div
         className={
           menuOpen
-            ? "fixed right-0 top-0 w-[65%] lg:hidden h-full bg-[#e8e7ea] p-10 ease-in duration-700 z-10"
-            : "fixed right-[-100%] top-0 p-10 h-full ease-in duration-700 "
+            ? "fixed right-0 top-0 w-[65%] lg:hidden h-full bg-[#e8e7ea] p-10 ease-in duration-400 z-10"
+            : "fixed right-[-100%] top-0 p-10 h-full ease-in duration-400 z-10 "
         }
       >
         <div>
