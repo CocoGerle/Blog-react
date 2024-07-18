@@ -10,3 +10,8 @@
 h1{
   color: #181A2A;
 }
+
+body {
+  width: 100vw;
+  overflow: hidden;
+}
