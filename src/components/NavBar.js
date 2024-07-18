@@ -17,7 +17,7 @@ export const NavBar = () => {
     console.log("hhu");
   };
   return (
-    <>
+    <div className="overflow-hidden">
       <div className="flex flex-row justify-between items-center  lg:mb-[60px] max-w-screen-xl m-auto p-[16px]">
         <Link href={`/`}>
           <div className="flex flex-row items-center gap-[7.69px]">
@@ -103,6 +103,6 @@ export const NavBar = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
