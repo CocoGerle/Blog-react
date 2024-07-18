@@ -2,19 +2,23 @@ import { Button } from "./Button";
 import { FormattedDate } from "./FormattedDate";
 
 export const BlogCard = (props) => {
+  const image =
+    "https://img.wallpapic.com/i2911-721-325/thumb/sunrise-nature-sea-coast-wallpaper.jpg";
   return (
-    <div className="max-w-screen-lg m-auto border rounded-xl p-4 flex flex-col gap-4 ">
+    <div className="max-w-screen-lg m-auto border rounded-xl p-4 flex flex-col gap-4 h-[464px]">
       <img
-        src={props.image}
+        src={props.image ?? image}
         className="rounded-md flex object-cover h-[240px]"
       />
-      <div className="flex flex-col flex-1 gap-4">
+      <div className="flex flex-col flex-1 gap-4 ">
         <Button
           tag={props.tags}
           color="bg-gray-100"
           textColor="text-[#4B6BFB]"
         />
-        <p className="font-semibold text-[32px] leading-8">{props.title}</p>
+        <p className="font-semibold text-[20px] leading-8">
+          {props.title}
+        </p>
         <div className="flex items-center gap-[24px] mb-[32px]">
           <div className="flex items-center gap-2">
             {props.profile_image && (
