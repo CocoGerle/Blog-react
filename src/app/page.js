@@ -1,12 +1,11 @@
 "use client";
 
-
 import { AllBlogs } from "@/components/AllBlog";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Landing } from "@/components/Landing";
 import { NavBar } from "@/components/NavBar";
-import { NotFound } from "@/components/NotFound";
+
 import { Trending } from "@/components/Trending";
 import { useEffect, useState } from "react";
 
@@ -27,12 +26,11 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <NavBar/>
-      <Landing articles={articles}/>
-      <Trending articles={articles}/>
-      <AllBlogs/>
+      <NavBar />
+      <Landing articles={articles} />
+      <Trending articles={articles} />
+      <AllBlogs />
       <Footer/>
-      {/* <NotFound/> */}
     </div>
   );
 }

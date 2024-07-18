@@ -2,6 +2,8 @@ import { TrendingCard } from "./TrendingCards";
 import Link from "next/link";
 
 export const Trending = ({ articles }) => {
+  const image =
+    "https://img.wallpapic.com/i2911-721-325/thumb/sunrise-nature-sea-coast-wallpaper.jpg";
   return (
     <div className="p-4 max-w-screen-xl m-auto">
       <h1 className="font-bold text-2xl mb-[32px]">Trending</h1>
@@ -14,7 +16,7 @@ export const Trending = ({ articles }) => {
                   <TrendingCard
                     tag={item.tags}
                     title={item.title}
-                    social={item.cover_image}
+                    social={item.cover_image ?? image}
                   />
                 </Link>
               </>

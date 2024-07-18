@@ -16,10 +16,10 @@ export const Landing = ({ articles }) => {
     setActiveImage((prev) => (prev === 0 ? perPage : prev - 1));
   };
   return (
-    <div className="max-w-screen-xl m-auto  flex flex-col gap-[11px] ">
+    <div className="max-w-screen-xl m-auto px-[16px] flex flex-col gap-[11px] ">
       <div className="overflow-hidden w-[100%]">
         <div
-          className="flex"
+          className="flex duration-1000"
           style={{
             width: `${perPage * 100}%`,
             transform: `translateX(${(-activeImage * 100) / perPage}%)`,
@@ -27,14 +27,14 @@ export const Landing = ({ articles }) => {
         >
           {articles &&
             articles.slice(0, perPage).map((item) => (
-             
+              <Link key={item.id} href={`blogs/${item.id}`}>
                 <LandingCards
                   img={item.cover_image}
                   title={item.title}
                   tag={item.tags}
                   published_at={item.published_at}
                 />
-           
+              </Link>
             ))}
         </div>
       </div>

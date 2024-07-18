@@ -1,8 +1,8 @@
-import { Footer } from "./Footer";
-import { NavBar } from "./NavBar";
+import { Footer } from "../components/Footer";
+import { NavBar } from "../components/NavBar";
 import Link from "next/link";
 
-export const NotFound = () => {
+const NotFound = () => {
   return (
     <div>
       <NavBar />
@@ -25,3 +25,4 @@ export const NotFound = () => {
     </div>
   );
 };
+export default NotFound;
