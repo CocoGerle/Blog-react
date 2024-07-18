@@ -55,7 +55,7 @@ export const NavBar = () => {
         className={
           menuOpen
             ? "fixed right-0 top-0 w-[65%] lg:hidden h-full bg-[#e8e7ea] p-10 ease-in duration-400 z-10"
-            : "fixed right-[-100%] top-0 p-10 h-full ease-in duration-400 z-10 "
+            : "fixed right-[-100%] top-0 p-10 h-full ease-in duration-400 z-10"
         }
       >
         <div>
