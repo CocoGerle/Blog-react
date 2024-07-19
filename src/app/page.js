@@ -8,6 +8,9 @@ import { NavBar } from "@/components/NavBar";
 
 import { Trending } from "@/components/Trending";
 import { useEffect, useState } from "react";
+import { Work_Sans } from "next/font/google";
+
+const workSans = Work_Sans({ subsets: ["latin"] });
 
 const getArticle = async () => {
   const res = await fetch("https://dev.to/api/articles");
@@ -25,12 +28,12 @@ export default function Home() {
     getData();
   }, []);
   return (
-    <div>
+    <div className={workSans.className}>
       <NavBar />
       <Landing articles={articles} />
       <Trending articles={articles} />
       <AllBlogs />
-      <Footer/>
+      <Footer />
     </div>
   );
 }

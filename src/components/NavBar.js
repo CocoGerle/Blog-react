@@ -9,12 +9,32 @@ import { LinkedIcon } from "@/assets/icons/LinkedIcon";
 import { TwitterIcon } from "@/assets/icons/TwitterIcon";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+
+const paths = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Blog",
+    path: "/blogs",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+  },
+  {
+    name: "About",
+    path: "#footer",
+  },
+];
 
 export const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
   const handleNav = () => {
     setMenuOpen(!menuOpen);
-    console.log("hhu");
   };
   return (
     <div className="overflow-hidden">
@@ -30,20 +50,19 @@ export const NavBar = () => {
           </div>
         </Link>
         <div className="hidden lg:flex lg:gap-[250px]">
-          <ul className="lg:flex hidden lg:gap-[40px] text-[#3B3C4A] text-[16px] lg:items-center">
-            <Link href={`/`}>
-              <li>Home</li>
-            </Link>
-            <Link href={`/blogs`}>
-              <li>Blog</li>
-            </Link>
-            <Link href={`/contact`}>
-              <li>Contact</li>
-            </Link>
-            <Link href="#footer">
-              <li>About</li>
-            </Link>
-          </ul>
+          <div className="lg:flex hidden lg:gap-[40px] text-[#3B3C4A] text-[16px] lg:items-center">
+            {paths.map((path, index) => (
+              <Link key={index} href={path.path}>
+                <div
+                  className="text-black"
+                  style={{ color: pathname === path.path ? "blue" : "#000" }}
+                >
+                  {path.name}
+                </div>
+              </Link>
+            ))}
+          </div>
+
           <div className="bg-[#F4F4F5] p-2 lg:flex rounded flex items-center justify-between text-[14px] text-[#A1A1AA] w-fit">
             <input className="bg-[#F4F4F5]" placeholder="Search" />
             <SearchIcon />
@@ -66,18 +85,17 @@ export const NavBar = () => {
               <IoMdClose size={30} />
             </div>
           </div>
-          <div>
-            <ul className="flex flex-col gap-[40px] text-[#3B3C4A] text-[16px]">
-              <Link href={`/`}>
-                <li className="cursor-pointer">Home</li>
+          <div className="flex flex-col gap-[20px]">
+            {paths.map((path, index) => (
+              <Link key={index} href={path.path}>
+                <div
+                  className="text-black"
+                  style={{ color: pathname === path.path ? "blue" : "#000" }}
+                >
+                  {path.name}
+                </div>
               </Link>
-              <Link href={`/blogs`}>
-                <li className="cursor-pointer">Blog</li>
-              </Link>
-              <Link href={`/contact`}>
-                <li className="cursor-pointer">Contact</li>
-              </Link>
-            </ul>
+            ))}
           </div>
           <div className="flex gap-[26.67px] justify-around pt-10 items-center">
             <Link

@@ -5,6 +5,9 @@ import { BlogCard } from "../../components/BlogCard";
 import { Footer } from "@/components/Footer";
 import Link from "next/link";
 import { NavBar } from "@/components/NavBar";
+import { Work_Sans } from "next/font/google";
+
+const workSans = Work_Sans({ subsets: ["latin"] });
 
 
 const BlogsPage = () => {
@@ -41,7 +44,7 @@ const BlogsPage = () => {
   const image =
   "https://img.wallpapic.com/i2911-721-325/thumb/sunrise-nature-sea-coast-wallpaper.jpg";
   return (
-    <div>
+    <div className={workSans.className}>
       <NavBar/>
       <div className="flex flex-col  max-w-screen-xl m-auto py-8">
         <h1 className="font-bold text-2xl p-4">All Blog Post</h1>

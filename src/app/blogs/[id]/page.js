@@ -5,6 +5,9 @@ import { FormattedDate } from "@/components/FormattedDate";
 import { NavBar } from "@/components/NavBar";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Work_Sans } from "next/font/google";
+
+const workSans = Work_Sans({ subsets: ["latin"] });
 
 const BlogPage = () => {
   const { id } = useParams();
@@ -25,7 +28,7 @@ const BlogPage = () => {
   const image =
     "https://img.wallpapic.com/i2911-721-325/thumb/sunrise-nature-sea-coast-wallpaper.jpg";
   return (
-    <>
+    <div className={workSans.className}>
       <NavBar />
       <div className="max-w-screen-lg m-auto p-[16px]">
         <h1 className="text-[#181A2A] text-[36px] font-semibold mb-[20px]">
@@ -57,7 +60,7 @@ const BlogPage = () => {
         />
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
